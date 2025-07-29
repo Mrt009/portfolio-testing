@@ -1,0 +1,96 @@
+@media only screen and (max-width: 600px) {
+    /* Hide the paragraph on small screens */
+    .pt-3 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    /* Reduce the font size for smaller screens */
+    .main-font {
+        font-size: 18px; /* Adjust the size as needed */
+    }}
+
+
+    @media (min-width: 766px) and (max-width: 990px) {
+        .content-para {
+            display: none;
+        }
+    }
+    
+
+/* Add this style to your existing CSS */
+
+ /* for the source code design */
+ .box ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.box ul li {
+    --c: goldenrod;
+    color: var(--c);
+    font-size: 16px;
+    border: 0.3em solid var(--c);
+    border-radius: 0.5em;
+    
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    
+}
+
+.box ul li span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+.box ul li:hover {
+    color: black;
+}
+
+.box ul li:hover span {
+    transform: translateY(0) scale(2);
+}
+
+.box ul li span:nth-child(1) {
+    --n: 1;
+}
+
+.box ul li span:nth-child(2) {
+    --n: 2;
+}
+
+.box ul li span:nth-child(3) {
+    --n: 3;
+}
+
+.box ul li span:nth-child(4) {
+    --n: 4;
+}
+
+
+
+@media (max-width: 1201px) {
+    body {
+        scroll-behavior: auto; /* or scroll-behavior: initial; depending on your existing CSS */
+    }
+}
+
+    

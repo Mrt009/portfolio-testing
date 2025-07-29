@@ -1,0 +1,3391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- Author -->
+    <meta name="author" content="Themes Industry">
+    <!-- description -->
+    <meta name="description" content="MegaOne is a highly creative, modern, visually stunning and Bootstrap responsive multipurpose studio and portfolio HTML5 template with 8 ready home page demos.">
+    <!-- keywords -->
+    <meta name="keywords" content="Creative, modern, clean, bootstrap responsive, html5, css3, portfolio, blog, studio, templates, multipurpose, one page, corporate, start-up, studio, branding, designer, freelancer, carousel, parallax, photography, studio, masonry, grid, faq">
+    <!-- Page Title -->
+    <title>Matrika Regmi</title>
+    <!-- Favicon -->
+    <link href="img/tab.jpeg" rel="icon">
+    
+    <!-- Preload only critical resources for faster initial load -->
+    <link rel="preload" href="css/bundle.min.css" as="style">
+    <link rel="preload" href="css/critical.css" as="style">
+    <link rel="preload" href="img/face.png" as="image">
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//cdn.lineicons.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    
+    <!-- Critical CSS first -->
+    <link href="css/critical.css" rel="stylesheet">
+    <link href="css/bundle.min.css" rel="stylesheet">
+    
+    <!-- Defer non-critical CSS -->
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet"></noscript>
+    
+    <!-- Plugin CSS - defer loading -->
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="css/owl.carousel.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="css/tootik.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="css/line-awesome.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="css/jquery.pagepiling.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="css/research-modal.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="css/style.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="css/stylesmall.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="css/backend.css" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <noscript>
+        <link href="css/jquery.fancybox.min.css" rel="stylesheet">
+        <link href="css/owl.carousel.min.css" rel="stylesheet">
+        <link href="css/tootik.min.css" rel="stylesheet">
+        <link href="css/line-awesome.min.css" rel="stylesheet">
+        <link href="css/jquery.pagepiling.css" rel="stylesheet">
+        <link href="css/research-modal.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/stylesmall.css" rel="stylesheet">
+        <link href="css/backend.css" rel="stylesheet">
+    </noscript>
+    
+    <!-- 3D Certificate Card Styles -->
+    <style>
+        /* 3D Certificate Card Design with Pagination */
+        .cert-3d-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            min-height: 600px; /* Ensure enough content for scrolling */
+        }
+        
+        /* Certificate Pagination */
+        .cert-pagination-wrapper {
+            position: relative;
+            max-height: none; /* Remove height restriction */
+            overflow: visible;
+            padding-bottom: 50px; /* Add bottom padding for scroll space */
+        }
+        
+        .certificates-section {
+            padding-bottom: 60px;
+            margin-bottom: 30px;
+        }
+        
+        /* Simplified certificate section with normal scrolling speed */
+        #certificate {
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: auto; /* Instant scrolling instead of smooth */
+            height: 100vh !important;
+            /* Disable PagePiling for this section */
+            pointer-events: auto !important;
+            position: relative !important;
+        }
+        
+        #certificate .scroll-wrap {
+            transform: translateZ(0);
+            /* Normal, responsive scrolling */
+            scroll-behavior: auto; /* Instant response */
+            overscroll-behavior: contain;
+            height: 100% !important;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch;
+            /* Ensure this container handles all scroll events */
+            position: relative;
+            z-index: 1000;
+        }
+        
+        /* Prevent PagePiling from intercepting scroll events in certificate section */
+        #certificate * {
+            pointer-events: auto !important;
+        }
+        
+        /* Override PagePiling wheel event handling for certificate section */
+        #certificate .scroll-wrap {
+            /* This will be handled by JavaScript to disable PagePiling */
+            user-select: auto;
+        }
+        
+        /* Normal scroll speed - removed excessive smooth behavior */
+        #certificate .scroll-wrap {
+            /* Controlled scrolling with normal momentum */
+            -webkit-overflow-scrolling: touch;
+            scroll-padding: 20px;
+            /* Normal scroll behavior for practical use */
+            scroll-behavior: auto;
+        }
+        
+        #certificate .cert-page {
+            /* Removed scroll-snap-align to prevent bouncing back */
+            /* Add some spacing between pages for better readability */
+            margin-bottom: 20px;
+            min-height: 600px; /* Ensure content has proper height for scrolling */
+            padding: 20px 0;
+        }
+        
+        /* Ensure certificate section has enough content height for proper scrolling */
+        #certificate .container-fluid {
+            min-height: 120vh; /* Make content taller than viewport */
+            padding-bottom: 100px;
+        }
+        
+        /* Slow and smooth scrolling within certificate section */
+        #certificate .scroll-wrap::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        #certificate .scroll-wrap::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        
+        #certificate .scroll-wrap::-webkit-scrollbar-thumb {
+            background: rgba(255, 193, 7, 0.6);
+            border-radius: 4px;
+        }
+        
+        #certificate .scroll-wrap::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 193, 7, 0.8);
+        }
+        
+        /* Normal transitions for practical scrolling */
+        * {
+            scroll-behavior: auto; /* Remove smooth scrolling globally for faster response */
+        }
+        
+        /* Specific PagePiling section transitions to reduce glitches */
+        .section {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        /* Reduce scroll glitches in certificate section */
+        #certificate {
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+        
+        /* Visual indicator for auto-navigation countdown */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 193, 7, 0.95);
+            color: #000;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-size: 13px;
+            z-index: 1000;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .scroll-indicator.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Lazy Loading Styles */
+        .lazy-bg {
+            background-image: none !important;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lazy-bg.loaded {
+            opacity: 1;
+        }
+        
+        img[data-src] {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        img[data-src].loaded {
+            opacity: 1;
+        }
+        
+        /* Enhanced Contact Section Styles */
+        .contact-info {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .contact-info h5 {
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            width: 20px;
+            font-size: 16px;
+        }
+        
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #ffc107;
+            box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+            color: white;
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .form-control option {
+            background: #333;
+            color: white;
+        }
+        
+        /* Style for placeholder option */
+        .form-control option[value=""] {
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+        }
+        
+        /* Style the select when no option is selected - make text visible */
+        .form-control:invalid {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-style: italic !important;
+        }
+        
+        .form-control:valid {
+            color: white !important;
+        }
+        
+        /* Additional styling for select placeholder behavior - ensure visibility */
+        .form-control.placeholder-active {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-style: italic !important;
+        }
+        
+        .form-control:not(.placeholder-active) {
+            color: white !important;
+            font-style: normal !important;
+        }
+        
+        /* Specific styling for select elements to ensure visibility */
+        select.form-control {
+            color: white !important;
+        }
+        
+        select.form-control:invalid,
+        select.form-control.placeholder-active {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-style: italic !important;
+        }
+        
+        /* Ultra-aggressive input styling for project type */
+        #project_type {
+            color: white !important;
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            font-weight: 500 !important;
+            width: 100% !important;
+            min-width: 300px !important;
+            max-width: 100% !important;
+            font-size: 16px !important;
+            box-sizing: border-box !important;
+            padding: 12px 15px !important;
+            line-height: 1.4 !important;
+        }
+        
+        #project_type::placeholder {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-weight: 500 !important;
+        }
+        
+        /* Ensure form group doesn't constrain width */
+        .form-group {
+            width: 100% !important;
+            min-width: 300px !important;
+            max-width: 100% !important;
+        }
+        
+        .text-small {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        
+        /* Submit Button Envelope Animation Styles */
+        .contact_btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            min-height: 50px;
+            min-width: 150px;
+        }
+        
+        .btn-text {
+            transition: all 0.5s ease;
+            display: inline-block;
+        }
+        
+        /* Whole Form Envelope Animation */
+        .contact-form {
+            position: relative;
+            transition: all 2s ease;
+            transform-origin: center center;
+        }
+        
+        .form-fields-container {
+            transition: all 1.8s ease;
+            transform-origin: center center;
+        }
+        
+        .contact-form.folding .form-fields-container {
+            transform: perspective(1200px) rotateX(-20deg) rotateY(5deg) scale(0.7);
+            opacity: 0.6;
+            filter: blur(1px);
+        }
+        
+        .contact-form.folded .form-fields-container {
+            transform: perspective(1200px) rotateX(-85deg) rotateY(10deg) scale(0.2);
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .envelope-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all 1.5s ease;
+            z-index: 100;
+            pointer-events: none;
+        }
+        
+        .envelope-container.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .large-envelope {
+            width: 320px;
+            height: 220px;
+            position: relative;
+            background: linear-gradient(145deg, #1e1e1e, #0f0f0f);
+            border-radius: 8px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(255, 215, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .envelope-front {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #1e1e1e, #0f0f0f);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .envelope-flap-large {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 160px solid transparent;
+            border-right: 160px solid transparent;
+            border-top: 130px solid #ffd700;
+            transform-origin: top center;
+            animation: foldProfessionalFlap 2.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            z-index: 10;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+        
+        .envelope-message {
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            width: 250px;
+            height: 150px;
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            border-radius: 4px;
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            animation: slideInAndFoldPaper 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s forwards;
+            padding: 25px;
+            box-sizing: border-box;
+            transform-origin: center bottom;
+            transform-style: preserve-3d;
+        }
+        
+        .message-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInProfessional 1s ease-out 1.2s forwards;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+        
+        .message-icon {
+            font-size: 20px;
+            color: #ffd700;
+            margin-right: 10px;
+        }
+        
+        .message-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .message-lines {
+            padding: 0;
+        }
+        
+        .message-line {
+            height: 1px;
+            background: linear-gradient(90deg, #ddd, #bbb);
+            margin-bottom: 12px;
+            border-radius: 0;
+            opacity: 0;
+            animation: fadeInLine 0.8s ease-out forwards;
+        }
+        
+        .message-line:nth-child(1) { 
+            width: 100%; 
+            animation-delay: 1.4s;
+        }
+        .message-line:nth-child(2) { 
+            width: 85%; 
+            animation-delay: 1.6s;
+        }
+        .message-line:nth-child(3) { 
+            width: 95%; 
+            animation-delay: 1.8s;
+        }
+        .message-line:nth-child(4) { 
+            width: 70%; 
+            animation-delay: 2s;
+        }
+        .message-line:nth-child(5) { 
+            width: 90%; 
+            animation-delay: 2.2s;
+        }
+        
+        .envelope-stamp {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 45px;
+            height: 32px;
+            background: linear-gradient(145deg, #ffd700, #e6c200);
+            border-radius: 2px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: stampAppearProfessional 0.6s ease-out 1.8s forwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #000;
+            font-weight: 700;
+            box-shadow: 
+                0 2px 8px rgba(255, 215, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            letter-spacing: 0.5px;
+        }
+        
+        @keyframes foldProfessionalFlap {
+            0% {
+                transform: rotateX(0deg);
+                border-top-color: #ffd700;
+                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            }
+            25% {
+                transform: rotateX(0deg);
+                border-top-color: #ffed4e;
+            }
+            80% {
+                transform: rotateX(-160deg);
+                border-top-color: #e6c200;
+            }
+            100% {
+                transform: rotateX(-175deg);
+                border-top-color: #d4af00;
+                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+            }
+        }
+        
+        @keyframes slideInAndFoldPaper {
+            0% {
+                opacity: 0;
+                transform: translateY(100px) scale(0.8) rotateX(0deg);
+            }
+            20% {
+                opacity: 1;
+                transform: translateY(0px) scale(1) rotateX(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0px) scale(1) rotateX(0deg);
+            }
+            70% {
+                opacity: 0.8;
+                transform: translateY(-10px) scale(0.9) rotateX(-45deg);
+            }
+            85% {
+                opacity: 0.4;
+                transform: translateY(-30px) scale(0.7) rotateX(-90deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-60px) scale(0.3) rotateX(-180deg);
+            }
+        }
+        
+        @keyframes slideInProfessional {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.9);
+            }
+            70% {
+                opacity: 0.8;
+                transform: translateY(-5px) scale(1.02);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        @keyframes fadeInProfessional {
+            0% {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes stampAppearProfessional {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(-15deg);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.1) rotate(-8deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(-10deg);
+            }
+        }
+        
+        @keyframes slideInMessage {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        @keyframes fadeInLine {
+            0% {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+        
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes stampAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0) rotate(-10deg);
+            }
+            70% {
+                transform: scale(1.1) rotate(-5deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(-8deg);
+            }
+        }
+        
+        /* Top Success Notification - BHIM Style */
+        .top-success-notification {
+            position: fixed;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 320px;
+            background: linear-gradient(135deg, #00C851, #00A843);
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 8px 30px rgba(0, 200, 81, 0.4);
+            z-index: 9999;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 25px 20px 20px;
+            color: white;
+        }
+        
+        .top-success-notification.show {
+            top: 0;
+            animation: successSlideIn 0.6s ease-out;
+        }
+        
+        .success-notification-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .success-badge {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            flex-shrink: 0;
+        }
+        
+        .success-checkmark {
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+            animation: checkmarkPop 0.8s ease-out 0.3s both;
+        }
+        
+        .success-details {
+            flex: 1;
+        }
+        
+        .success-heading {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 5px 0;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .success-amount {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 3px 0;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .success-info {
+            font-size: 13px;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.3;
+        }
+        
+        @keyframes successSlideIn {
+            0% {
+                transform: translateX(-50%) translateY(-100%);
+                opacity: 0;
+            }
+            70% {
+                transform: translateX(-50%) translateY(10px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes checkmarkPop {
+            0% {
+                transform: scale(0) rotate(-45deg);
+                opacity: 0;
+            }
+            70% {
+                transform: scale(1.2) rotate(5deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+        
+        /* Success Message Styling */
+        .success-container {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            opacity: 0;
+            transition: all 0.8s ease;
+            z-index: 101;
+        }
+        
+        .success-container.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+        
+        .success-message-creative {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 25px 35px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(40, 167, 69, 0.4);
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            animation: successPulse 2s ease-in-out infinite;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            animation: checkmarkBounce 1.2s ease-out;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .success-text {
+            text-align: center;
+            line-height: 1.4;
+        }
+        
+        .success-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .success-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        @keyframes checkmarkBounce {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.3) rotate(180deg);
+                opacity: 0.8;
+            }
+            75% {
+                transform: scale(0.9) rotate(360deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(360deg);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes successPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 15px 40px rgba(40, 167, 69, 0.4);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 20px 50px rgba(40, 167, 69, 0.6);
+            }
+        }
+        
+        @keyframes successSpin {
+            0% {
+                transform: rotate(0deg) scale(0);
+            }
+            50% {
+                transform: rotate(180deg) scale(1.2);
+            }
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+        
+        .envelope-animation {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+        
+        .envelope {
+            width: 40px;
+            height: 25px;
+            position: relative;
+            background: #fff;
+            border-radius: 2px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 15px solid #ffd700;
+            transform-origin: top center;
+            animation: foldFlap 1.5s ease-in-out forwards;
+        }
+        
+        .envelope-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 25px;
+            background: #fff;
+            border-radius: 0 0 2px 2px;
+        }
+        
+        @keyframes foldFlap {
+            0% {
+                transform: rotateX(0deg);
+            }
+            50% {
+                transform: rotateX(0deg);
+            }
+            100% {
+                transform: rotateX(-180deg);
+            }
+        }
+        
+        .contact_btn.submitting {
+            background: rgba(255, 193, 7, 0.3) !important;
+            border-color: rgba(255, 193, 7, 0.6) !important;
+            transform: scale(0.95);
+        }
+        
+        .contact_btn.submitting .btn-text {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        
+        .contact_btn.submitting .envelope-animation {
+            opacity: 1;
+            display: block !important;
+        }
+        
+        .contact_btn.submitted {
+            background: rgba(40, 167, 69, 0.8) !important;
+            border-color: rgba(40, 167, 69, 1) !important;
+            transform: scale(1);
+        }
+        
+        .submission-message {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+        }
+        
+        .submission-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .initial-message {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.5s ease;
+        }
+        
+        .initial-message.hide {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        
+        .text-success {
+            color: #28a745 !important;
+            font-weight: 600;
+        }
+        
+        /* Small text styling for scroll indicator */
+        .scroll-indicator small {
+            display: block;
+            font-size: 11px;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+        
+        #certificate .container {
+            max-height: none;
+            max-width: 1400px;
+            width: 100%;
+        }
+        
+        #certificate .cert-pagination-wrapper {
+            max-height: none;
+            overflow: visible;
+        }
+        
+        .cert-page {
+            display: none;
+        }
+        
+        .cert-page.active {
+            display: block;
+        }
+        
+        /* Pagination Controls */
+        .cert-pagination-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            gap: 15px;
+        }
+        
+        .page-btn {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            border: 2px solid #333;
+            color: #ffd700;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            min-width: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .page-btn:hover {
+            background: linear-gradient(135deg, #ffd700, #ff6b35);
+            color: #000;
+            border-color: #ffd700;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+        
+        .page-btn.active {
+            background: linear-gradient(135deg, #ffd700, #ff6b35);
+            color: #000;
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .page-btn.disabled {
+            opacity: 0.5 !important;
+            cursor: not-allowed !important;
+        }
+        
+        .page-info {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin: 0 10px;
+        }
+        
+        /* Category Filter Tabs */
+        .cert-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .category-btn {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            border: 2px solid #333;
+            color: #ccc;
+            padding: 8px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background: linear-gradient(135deg, #ffd700, #ff6b35);
+            color: #000;
+            border-color: #ffd700;
+            transform: translateY(-1px);
+        }
+        
+        .cert-card-3d {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            height: 480px; /* Fixed height for all cards */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Equal spacing between elements */
+        }
+        
+        .cert-card-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.05), transparent);
+            opacity: 0;
+        }
+        
+        .cert-card-3d:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.1);
+        }
+        
+        .cert-card-3d:hover::before {
+            opacity: 1;
+        }
+        
+        .cert-image-3d {
+            width: 100%;
+            height: 180px; /* Fixed height for all images */
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px; /* Reduced margin for better spacing */
+            flex-shrink: 0; /* Prevent image from shrinking */
+        }
+        
+        .cert-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #ffd700, #ff6b35);
+            color: #000;
+            padding: 6px 15px;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            z-index: 2;
+        }
+        
+        .cert-content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 0; /* Allow content to shrink if needed */
+        }
+        
+        .cert-title-3d {
+            color: #ffd700;
+            font-size: 1.2rem; /* Slightly smaller for consistency */
+            font-weight: bold;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            line-height: 1.3;
+            height: auto;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .cert-description-3d {
+            color: #ccc;
+            font-size: 0.9rem; /* Slightly smaller for better fit */
+            line-height: 1.4;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+            flex: 1;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; /* Limit to 4 lines */
+            line-clamp: 4; /* Standard property for compatibility */
+            -webkit-box-orient: vertical;
+        }
+        
+        .cert-card-3d:hover .cert-title-3d {
+            color: #fff;
+        }
+        
+        .cert-card-3d:hover .cert-description-3d {
+            color: #fff;
+        }
+        
+        .cert-footer-3d {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #333;
+            transition: border-color 0.3s ease;
+            margin-top: auto; /* Push footer to bottom */
+            height: 50px; /* Fixed height for footer */
+            flex-shrink: 0; /* Prevent footer from shrinking */
+        }
+        
+        .cert-card-3d:hover .cert-footer-3d {
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+        
+        .cert-status {
+            display: flex;
+            align-items: center;
+            color: #ffd700;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .cert-status i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .cert-3d-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 800px;
+            }
+            
+            .cert-card-3d {
+                height: 450px; /* Slightly smaller for tablet */
+            }
+            
+            .cert-image-3d {
+                height: 160px; /* Adjust image height for smaller cards */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cert-3d-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 10px;
+                max-width: 400px;
+            }
+            
+            .cert-card-3d {
+                padding: 20px;
+                height: 420px; /* Consistent height for mobile */
+            }
+            
+            .cert-card-3d:hover {
+                transform: translateY(-5px) scale(1.01); /* Less dramatic hover on mobile */
+            }
+            
+            .cert-image-3d {
+                height: 140px; /* Smaller images on mobile */
+            }
+            
+            .cert-title-3d {
+                font-size: 1.1rem; /* Smaller title on mobile */
+            }
+            
+            .cert-description-3d {
+                font-size: 0.85rem; /* Smaller description on mobile */
+                -webkit-line-clamp: 3; /* Show fewer lines on mobile */
+                line-clamp: 3;
+            }
+            
+            .cert-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cert-pagination-controls {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .page-btn {
+                padding: 8px 12px;
+                min-width: 40px;
+            }
+        }
+        
+        /* Loading Animation */
+        .cert-card-3d {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .cert-card-3d:nth-child(1) { animation-delay: 0.1s; }
+        .cert-card-3d:nth-child(2) { animation-delay: 0.2s; }
+        .cert-card-3d:nth-child(3) { animation-delay: 0.3s; }
+        .cert-card-3d:nth-child(4) { animation-delay: 0.4s; }
+        .cert-card-3d:nth-child(5) { animation-delay: 0.5s; }
+        .cert-card-3d:nth-child(6) { animation-delay: 0.6s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="90">
+
+<!-- Scroll Indicator for Auto-Navigation -->
+<div id="scrollIndicator" class="scroll-indicator">
+    <span id="countdownText">Navigating to Contact in <span id="countdown">4</span>s...</span>
+</div>
+
+<!-- Research Paper Popup Modal -->
+<div id="researchPaperModal" class="research-modal">
+    <div class="research-modal-overlay" id="modalOverlay"></div>
+    <div class="research-modal-content">
+        <div class="research-header">
+            <div class="research-icon">
+                <i class="lni lni-graduation"></i>
+            </div>
+            <h2 class="research-title">🎓 Research Paper Alert!</h2>
+            <button class="research-close" id="closeModal">&times;</button>
+        </div>
+        <div class="research-body">
+            <div class="research-animation">
+                <div class="floating-papers">
+                    <div class="paper paper-1">📄</div>
+                    <div class="paper paper-2">📋</div>
+                    <div class="paper paper-3">📊</div>
+                </div>
+            </div>
+            <h3 class="research-subtitle">Latest Research Paper Available!</h3>
+            <p class="research-description">
+                Discover my latest research contribution in technology and innovation. 
+                This academic paper represents cutting-edge work in the field.
+            </p>
+            <div class="research-actions">
+                <a href="img/certificates/research_paper.pdf" target="_blank" class="btn-research-view">
+                    <i class="lni lni-eye"></i> View Research Paper
+                </a>
+                <button class="btn-research-later" id="viewLater">
+                    <i class="lni lni-bookmark"></i> View Later
+                </button>
+            </div>
+        </div>
+        <div class="research-footer">
+            <p><i class="lni lni-timer"></i> Don't miss this opportunity to explore innovative research!</p>
+        </div>
+    </div>
+</div>
+
+<!-- START LOADER -->
+<div class="loader-bg">
+    <div id="container">
+        <!-- Replace the SVG with an img tag linking to your GIF -->
+        <img src="img/preloader.gif" alt="Loading">
+    </div> 
+</div>
+
+<!-- END LOADER -->
+
+
+<!-- START HEADER -->
+<header>
+    <!--Navigation-->
+    <nav class="navbar navbar-top-default navbar-expand-lg navbar-simple nav-line">
+        <a href="#home" title="Logo" class="logo">
+            <!--Logo Default-->
+            <div class="mega-logo">
+                <img src="img/logo.png" alt="logo" class="ml-lg-3 m-0">
+                
+            </div>
+        </a>
+
+        <!--Side Menu Button-->
+        <div class="navigation-toggle">
+            <ul class="slider-social toggle-btn my-0">
+                <li>
+                    <a href="javascript:void(0);" class="sidemenu_btn" id="sidemenu_toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                       
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Side Nav-->
+    <div class="side-menu hidden">
+        <span id="btn_sideNavClose">
+          <i class="lni lni-plus btn-close"></i>
+        </span>
+        <div class="inner-wrapper">
+            <nav class="side-nav w-100">
+                <a href="#home" title="Logo" class="logo navbar-brand">
+                    <img src="img/logo.png" alt="logo">
+                </a>
+                <ul class="navbar-nav text-capitalize">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certificate">Certificates</a>
+                    </li>
+               
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="text-center sidebar_btn">
+                    <a href="foodeli.pdf" download class="btn btn-medium btn-rounded btn-yellow text-capitalize">Download Foodeli</a>
+                </div>
+            </nav>
+
+            <div class="side-footer w-100">
+                <p>&copy;2023-2025 Matrika Regmi</p>
+            </div>
+        </div>
+    </div>
+    <a id="close_side_menu" href="javascript:void(0);"></a>
+</header>
+<!-- END HEADER -->
+
+<div id="pagepiling">
+
+<!-- START BANNER -->
+<section class="section slide1 p-0" id="home">
+    <div class="slider-area" id="slider-area">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6 image-order">
+                <div class="slider-image image-container">
+                    <img id="profile" src="img/face.png" alt="Slider-Image" loading="eager">
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 text-md-center text-lg-left " >
+                <div class="slider-content">
+                    <h2 class="main-font text-uppercase"><span class="slider-text px-2 write"> Hi I am </span> 
+                    <h1 class="main-font text-uppercase"><span class="slider-text px-2 mainText name" > Matrika Regmi!</span><br> <span class=" text-yellow typing" > </span></h1>
+                      <p class="pt-3 alt-font content-para desp">"I'm driven by an unwavering passion for technology, constantly exploring its endless possibilities and pushing boundaries to create innovative solutions."</p>
+                      
+                </div>
+            </div>
+        </div>
+        <!-- Circle-One -->
+        <div class="circle-one" >
+             <span data-tootik="About" data-tootik-conf="right dark square shadow" >
+                <a href="#about">
+                    <span class="animated-circle position-relative"></span>
+                </a>
+             </span>
+        </div>
+        <!-- Circle-Three -->
+        <div class="circle-three">
+          <span data-tootik="Portfolio" data-tootik-conf="top dark square shadow">
+                <a href="#portfolio">
+                    <span class="animated-circle position-relative"></span>
+                </a>
+          </span>
+        </div>
+        <!-- Circle-Four -->
+        <div class="circle-four">
+              <span data-tootik="Certificates" data-tootik-conf="bottom dark square shadow">
+                <a href="#certificate">
+                    <span class="animated-circle position-relative"></span>
+                </a>
+              </span>
+        </div>
+       
+        <!-- Circle-Five -->
+        <div class="circle-six">
+              <span data-tootik="Contact" data-tootik-conf="bottom dark square shadow">
+                    <a href="#contact">
+                        <span class="animated-circle position-relative"></span>
+                    </a>
+              </span>
+        </div>
+    </div>
+</section>
+<!-- END BANNER -->
+<!-- START SKILLS -->
+<section class="section slide2 skills" id="about">
+    <div class="container">
+        <div class="row pb-5">
+            <div class="col-12 col-md-7 pl-md-0">
+                <h3 class="main-font text-uppercase"><span class="text-yellow d-block"> Tech Enthusiast </span> <span>  </span></h3>
+                <p class="py-2 alt-font">Specialized in Software Development and Web Development.</p>
+            </div>
+            <div class="col-12 col-md-5 text-md-right pt-4 pt-md-0">
+                <h2 class="m-0 text-yellow main-font">5+</h2>
+                <p class="alt-font">Years of Experience</p>
+            </div>
+        </div>
+        <div class="row pt-md-5 skill-box">
+            <div class="col-12 col-md-6">
+
+                <div class="row">
+                    <!-- First Skill -->
+                    <div class="col-12 col-md-6 text-center text-md-left pl-md-0">
+                        <h4 class="main-font text-yellow skill">WEB DEVELOPMENT</h4>
+                        <p class="alt-font text-white mt-3">HTML, CSS, JavaScript,Bootstrap, Tailwind, Jquery, React, Node, Express, MongoDB, Git, Github </p>
+                    </div>
+                    <!-- Second Skill -->
+                    <div class="col-12 col-md-6 pt-5 pt-md-0 pr-md-0 text-center text-md-left">
+                        <h4 class="main-font text-yellow skill">Software Development</h4>
+                        <p class="alt-font text-white mt-3">Python, C++, Typescript, Docker, Linux, Command line, Version Control</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <!-- Third Skill -->
+                    <div class="col-12 col-md-6 text-center text-md-left pl-md-0">
+                        <h4 class="main-font text-yellow skill">Artificial Intelligence</h4>
+                        <p class="alt-font text-white mt-3">Python, Pandas, NumPy, Matplotlib, Tensorflow, Metaplotlib</p>
+                    </div>
+                    <!-- Fourth Skill -->
+                    <div class="col-12 col-md-6 pt-5 pt-md-0 text-center text-md-left pr-md-0">
+                        <h4 class="main-font text-yellow skill">DIGITAL Design</h4>
+                        <p class="alt-font text-white mt-3">Photoshop, Dimension, Canvas, Figma</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Progress Bars -->
+            <div class="col-12 col-md-5 offset-md-1 text-left pr-md-0 bars-section">
+                <ul class="progress-bar-side">
+                    <!-- First Bar -->
+                    <li class="custom-progress text-white">
+                        <h6 class="mb-0 text-capitalize mons-font">Web Development<span class="float-right"><b class="numscroller">96</b>%</span></h6>
+
+                        <div class="progress">
+                            <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Second Bar -->
+                    <li class="custom-progress text-white">
+                        <h6 class="mb-0 text-capitalize mons-font">Software Development<span class="float-right"><b class="numscroller">92</b>%</span></h6>
+
+                        <div class="progress">
+                            <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Third Bar -->
+                    <li class="custom-progress text-white">
+                        <h6 class="mb-0 text-capitalize mons-font">Artificial Intelligence<span class="float-right"><b class="numscroller">67</b>%</span></h6>
+
+                        <div class="progress">
+                            <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SKILLS -->
+
+
+<!-- START PORTFOLIO -->
+    <section class="section slide3 portfolio-bg" id="portfolio">
+        <div class="container">
+            <div class="row pb-5 heading-row">
+                <div class="col-12 col-md-7">
+                    <h3 class="main-font text-uppercase"><span class="text-yellow d-block"> PORTFOLIO </span> <span> MY RECENT WORK </span> </h3>
+                    <p class="py-1 alt-font">I believe in code </p>
+                </div>
+                <div class="col-12 col-md-5 text-md-right pt-4 pt-md-0">
+                    <h2 class="m-0 text-yellow main-font">20+</h2>
+                    <p class="alt-font">Portfolio Items</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="team-classic owl-team owl-carousel text-center">
+
+                        <!-- Item 1 -->
+                        <div class="item">
+                            <div class="team-data-img">
+                                <a href="https://mrt009.github.io/e-commerce/" >
+                                <div class="single-work">
+                                    <img src="img/ecommerce.png" alt="E-Commerce Project" class="img-responsive" data-no-retina loading="lazy">
+                                    <div class="overlay-text center-block">
+                                        <div class="cases-image-inner">
+                                            <span class="cases-line top"></span>
+                                            <span class="cases-line top-right"></span>
+                                            <span class="cases-line bottom"></span>
+                                            <span class="cases-line bottom-left"></span>
+                                            <h6 class="text-white text-uppercase alt-font">E-Commerce</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="portfolio-content">
+                                    <h5 class="text-yellow main-font mb-2 text-uppercase">E-Commerce</h5>
+                                    <p class="">Revolutionize online shopping with intuitive ecommerce, offering a personalized & secure shopping experience for users.<a class="box"href="https://github.com/Mrt009/e-commerce"><nav class="box">
+                                        <ul>
+                                         <li>
+                                           Source Code
+                                           <span></span><span></span><span></span><span></span>
+                                         </li>
+                                        
+                                    </nav></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="item">
+                            <div class="team-data-img">
+                                <a href="https://balodaya.edu.np/" >
+                                <div class="single-work">
+                                    <img src="img/school.png" alt="School Management System" class="img-responsive" data-no-retina loading="lazy">
+                                    <div class="overlay-text center-block">
+                                        <div class="cases-image-inner">
+                                            <span class="cases-line top"></span>
+                                            <span class="cases-line top-right"></span>
+                                            <span class="cases-line bottom"></span>
+                                            <span class="cases-line bottom-left"></span>
+                                            <h6 class="text-white text-uppercase alt-font">School Management System</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="portfolio-content">
+                                    <h5 class="text-yellow main-font mb-2 text-uppercase">School Management System</h5>
+                                    <p class=""> Manage school with comprehensive system, ensuring seamless administration, communication & student progress tracking. <a class="box"href="http://nepalcopyright.gov.np/downloadfile/Eng_Brochure66Final_1573191647.pdf"><nav class="box">
+                                        <ul>
+                                         <li>
+                                           Copyright
+                                           <span></span><span></span><span></span><span></span>
+                                         </li>
+                                        
+                                    </nav></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="item">
+                            <div class="team-data-img">
+                                <a href="https://mrt009.github.io/drum-kit/" >
+                                <div class="single-work">
+                                    <img src="img/drum-kit.png" alt="Drum Kit Application" class="img-responsive" data-no-retina loading="lazy">
+                                    <div class="overlay-text center-block">
+                                        <div class="cases-image-inner">
+                                            <span class="cases-line top"></span>
+                                            <span class="cases-line top-right"></span>
+                                            <span class="cases-line bottom"></span>
+                                            <span class="cases-line bottom-left"></span>
+                                            <h6 class="text-white text-uppercase alt-font">Drum-Kit</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="portfolio-content">
+                                    <h5 class="text-yellow main-font mb-2 text-uppercase">Drum-Kit</h5>
+                                    <p class="">Interactive web page allowing users to play and hear different drum sounds by clicking or pressing corresponding keys. <a class="box"href="https://github.com/Mrt009/drum-kit"><nav class="box">
+                                        <ul>
+                                         <li>
+                                           Source Code
+                                           <span></span><span></span><span></span><span></span>
+                                         </li>
+                                        
+                                    </nav></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                         <!-- Item 4 -->
+                        <div class="item">
+                            <div class="team-data-img">
+                                <a href="https://mrt009.github.io/calculator/">
+                                <div class="single-work">
+                                    <img src="img/calc.png" alt="Scientific Calculator" class="img-responsive" data-no-retina loading="lazy">
+                                    <div class="overlay-text center-block">
+                                        <div class="cases-image-inner">
+                                            <span class="cases-line top"></span>
+                                            <span class="cases-line top-right"></span>
+                                            <span class="cases-line bottom"></span>
+                                            <span class="cases-line bottom-left"></span>
+                                            <h6 class="text-white text-uppercase alt-font">Scientific Calculator</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="portfolio-content">
+                                    <h5 class="text-yellow main-font mb-2 text-uppercase">Scientific Calculator</h5>
+                                    <p class="">Advanced scientific calculator for precise calculations, featuring functions, constants, and a user-friendly interface.<a class="box"href="https://github.com/Mrt009/calculator"><nav class="box">
+                                        <ul>
+                                         <li>
+                                           Source Code
+                                           <span></span><span></span><span></span><span></span>
+                                         </li>
+                                        
+                                    </nav></a> </p>
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+
+                         <!-- Item 5 -->
+                        <div class="item">
+                            <div class="team-data-img">
+                                <a href="https://github.com/Mrt009/detector">
+                                <div class="single-work">
+                                    <img src="img/face2.jpg" alt="Optical Detector Project" class="img-responsive" data-no-retina loading="lazy">
+                                    <div class="overlay-text center-block">
+                                        <div class="cases-image-inner">
+                                            <span class="cases-line top"></span>
+                                            <span class="cases-line top-right"></span>
+                                            <span class="cases-line bottom"></span>
+                                            <span class="cases-line bottom-left"></span>
+                                            <h6 class="text-white text-uppercase alt-font">Optical Detector</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="portfolio-content">
+                                    <h5 class="text-yellow main-font mb-2 text-uppercase">Optical Detector</h5>
+                                    <p class="">
+Revolutionize surveillance with optical detector, seamlessly integrating face and motion detection for advanced security
+.<a class="box"href="https://github.com/Mrt009/detector"><nav class="box">
+                                        <ul>
+                                         <li>
+                                           Source Code
+                                           <span></span><span></span><span></span><span></span>
+                                         </li>
+                                        
+                                    </nav></a> </p>
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+                              <!-- Item 6 -->
+                        <div class="item">
+                            <div class="team-data-img">
+                                <a href="https://github.com/Mrt009/finance-CS50X">
+                                <div class="single-work">
+                                    <img src="img/stock.jpg" alt="Stock Market Server" class="img-responsive" data-no-retina loading="lazy">
+                                    <div class="overlay-text center-block">
+                                        <div class="cases-image-inner">
+                                            <span class="cases-line top"></span>
+                                            <span class="cases-line top-right"></span>
+                                            <span class="cases-line bottom"></span>
+                                            <span class="cases-line bottom-left"></span>
+                                            <h6 class="text-white text-uppercase alt-font">Stock Market Server</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="portfolio-content">
+                                    <h5 class="text-yellow main-font mb-2 text-uppercase">Stock Market Server</h5>
+                                    <p class="">
+Empower financial insights with stock market server, delivering real-time data & analysis for informed decision-making.
+<a class="box"href="https://github.com/Mrt009/finance-CS50X"><nav class="box">
+                                        <ul>
+                                         <li>
+                                           Source Code
+                                           <span></span><span></span><span></span><span></span>
+                                         </li>
+                                        
+                                    </nav></a> </p>
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                         <!-- Item 7 -->
+                        <div class="item">
+                            <div class="team-data-img">
+                                <a href="https://mrt009.github.io/ToDoList/">
+                                <div class="single-work">
+                                    <img src="img/todo.png" alt="To-Do List Application" class="img-responsive" data-no-retina loading="lazy">
+                                    <div class="overlay-text center-block">
+                                        <div class="cases-image-inner">
+                                            <span class="cases-line top"></span>
+                                            <span class="cases-line top-right"></span>
+                                            <span class="cases-line bottom"></span>
+                                            <span class="cases-line bottom-left"></span>
+                                            <h6 class="text-white text-uppercase alt-font">TO-DO LIST</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="portfolio-content">
+                                    <h5 class="text-yellow main-font mb-2 text-uppercase">TO-DO LIST</h5>
+                                    <p class="">Enhance productivity with intuitive to-do list app, combining organization and simplicity for efficient task management.<a class="box"href="https://github.com/Mrt009/ToDoList"><nav class="box">
+                                        <ul>
+                                         <li>
+                                           Source Code
+                                           <span></span><span></span><span></span><span></span>
+                                         </li>
+                                        
+                                    </nav></a> </p>
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+
+                         <!-- Item 8 -->
+                        <div class="item">
+                            <div class="team-data-img">
+                                <a href="https://mrt009.github.io/weather-app/">
+                                <div class="single-work">
+                                    <img src="img/weather.png" alt="team" class="img-responsive" data-no-retina>
+                                    <div class="overlay-text center-block">
+                                        <div class="cases-image-inner">
+                                            <span class="cases-line top"></span>
+                                            <span class="cases-line top-right"></span>
+                                            <span class="cases-line bottom"></span>
+                                            <span class="cases-line bottom-left"></span>
+                                            <h6 class="text-white text-uppercase alt-font">Weather App</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="portfolio-content">
+                                    <h5 class="text-yellow main-font mb-2 text-uppercase"> Weather App</h5>
+                                    <p class="">Stay ahead of the weather with our precise and user-friendly app, providing real-time forecasts and personalized updates.<a class="box"href="https://github.com/Mrt009/weather-app"><nav class="box">
+                                        <ul>
+                                         <li>
+                                           Source Code
+                                           <span></span><span></span><span></span><span></span>
+                                         </li>
+                                        
+                                    </nav></a> </p>
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 9 -->
+                        <div class="item">
+                            <div class="team-data-img">
+                                <a href="https://mrt009.github.io/simon_game/">
+                                <div class="single-work">
+                                    <img src="img/simon.png" alt="team" class="img-responsive" data-no-retina>
+                                    <div class="overlay-text center-block">
+                                        <div class="cases-image-inner">
+                                            <span class="cases-line top"></span>
+                                            <span class="cases-line top-right"></span>
+                                            <span class="cases-line bottom"></span>
+                                            <span class="cases-line bottom-left"></span>
+                                            <h6 class="text-white text-uppercase alt-font">Simon Game</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="portfolio-content">
+                                    <h5 class="text-yellow main-font mb-2 text-uppercase"> Simon Game</h5>
+                                    <p class="">Memory challenge with colored buttons and sounds. Repeat and extend sequences, avoid mistakes.<a class="box"href="https://github.com/Mrt009/simon_game"><nav class="box">
+                                        <ul>
+                                         <li>
+                                           Source Code
+                                           <span></span><span></span><span></span><span></span>
+                                         </li>
+                                        
+                                    </nav></a> </p>
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 10 -->
+                        <div class="item">
+                            <div class="team-data-img">
+                                <a href="https://mrt009.github.io/mantainance/">
+                                <div class="single-work">
+                                    <img src="img/nike.png" alt="team" class="img-responsive" data-no-retina>
+                                    <div class="overlay-text center-block">
+                                        <div class="cases-image-inner">
+                                            <span class="cases-line top"></span>
+                                            <span class="cases-line top-right"></span>
+                                            <span class="cases-line bottom"></span>
+                                            <span class="cases-line bottom-left"></span>
+                                            <h6 class="text-white text-uppercase alt-font">Nike Website</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                                <div class="portfolio-content">
+                                    <h5 class="text-yellow main-font mb-2 text-uppercase">Nike Website</h5>
+                                    <p class=""> Fusion of athletics, innovation, and style; the ultimate destination for sportswear enthusiasts.<a class="box"href="https://github.com/Mrt009/nike_website"><nav class="box">
+                                        <ul>
+                                         <li>
+                                           Source Code
+                                           <span></span><span></span><span></span><span></span>
+                                         </li>
+                                        
+                                    </nav></a> </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                        <!-- Item 11-->
+                        <div class="item">
+                            <div class="team-data-img">
+                                <a href="img/gifgit.gif" data-fancybox="images">
+                                    <div class="single-work">
+                                        <img data-src="img/gifgit.gif" alt="Coming Soon Animation" class="img-responsive lazy-load" data-no-retina loading="lazy" style="background: linear-gradient(45deg, #f0f0f0, #e0e0e0); min-height: 200px;">
+                                        <div class="overlay-text center-block">
+                                            <div class="cases-image-inner">
+                                                <span class="cases-line top"></span>
+                                                <span class="cases-line top-right"></span>
+                                                <span class="cases-line bottom"></span>
+                                                <span class="cases-line bottom-left"></span>
+                                                <h6 class="text-white text-uppercase alt-font">Coming Soon</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="portfolio-content">
+                                    <h5 class="text-yellow main-font mb-2 text-uppercase">Be Patience</h5>
+                                    <p class="">
+
+                                        We're diligently transforming projects from different languages into usable formats, ensuring accessibility.Till then you can visit my github profile to see other projects</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="circle ini-customPrevBtn" id="team-circle-left">
+                        <i class="lni lni-arrow-left-circle"></i>
+                    </a>
+                    <a class="circle ini-customNextBtn" id="team-circle-right">
+                        <i class="lni lni-arrow-right-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- END PORTFOLIO -->
+
+
+
+<!-- START Certificate -->
+<section class="section slide4 portfolio-bg" id="certificate">
+    <div class="scroll-wrap" style="height: 100vh; overflow-y: auto; padding: 120px 20px 40px 20px; box-sizing: border-box; -webkit-overflow-scrolling: touch;">
+        <div class="container-fluid">
+            <div class="row pb-5 heading-row">
+                <div class="col-12 col-md-7">
+                    <h3 class="main-font text-uppercase"><span class="text-yellow d-block"> Certificates and Achievements </span> </h3>
+                    <p class="py-1 alt-font">Certifying Success, One Achievement at a Time</p>
+                </div>
+                <div class="col-12 col-md-5 text-md-right pt-4 pt-md-0">
+                    <h2 class="m-0 text-yellow main-font">17+</h2>
+                    <p class="alt-font">Certificates</p>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-sm-12">
+                
+                <!-- Category Filter Tabs -->
+                <div class="cert-categories">
+                    <button class="category-btn active" data-category="all">All Certificates</button>
+                    <button class="category-btn" data-category="meta">Meta (7)</button>
+                    <button class="category-btn" data-category="python">Python (3)</button>
+                    <button class="category-btn" data-category="harvard">Harvard (2)</button>
+                    <button class="category-btn" data-category="webdev">Web Development (9)</button>
+                    <button class="category-btn" data-category="programming">Programming (2)</button>
+                    <button class="category-btn" data-category="other">Other (4)</button>
+                </div>
+                
+                <div class="cert-pagination-wrapper">
+                    <!-- Page 1: Meta Certificates -->
+                    <div class="cert-page active" id="page-1">
+                        <div class="cert-3d-grid">
+                            
+                            <!-- Certificate 1: CS50x -->
+                            <div class="cert-card-3d" data-category="harvard" onclick="window.open('img/certificates/cs50.png', '_blank')">
+                                <div class="cert-badge">Harvard</div>
+                                <img src="img/certificates/cs50_optimized.jpg" alt="Harvard CS50 Certificate" class="cert-image-3d">
+                                <h5 class="cert-title-3d">CS50x - Introduction to Computer Science</h5>
+                                <p class="cert-description-3d">Harvard's comprehensive computer science course covering programming fundamentals, algorithms, and problem-solving skills.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Certificate 2: Frontend Developer In-Depth -->
+                            <div class="cert-card-3d" data-category="meta webdev" onclick="window.open('img/certificates/feDepthMeta.png', '_blank')">
+                                <div class="cert-badge">Meta</div>
+                                <img src="img/certificates/feDepthMeta_optimized.jpg" alt="Frontend Developer In-Depth" class="cert-image-3d">
+                                <h5 class="cert-title-3d">Frontend Developer In-Depth</h5>
+                                <p class="cert-description-3d">Advanced front-end development course covering modern frameworks, performance optimization, and professional practices.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Certificate 3: Introduction to Frontend Development -->
+                            <div class="cert-card-3d" data-category="meta webdev" onclick="window.open('img/certificates/intro.png', '_blank')">
+                                <div class="cert-badge">Meta</div>
+                                <img src="img/certificates/intro_optimized.jpg" alt="Introduction to Frontend Development" class="cert-image-3d">
+                                <h5 class="cert-title-3d">Introduction to Frontend Development</h5>
+                                <p class="cert-description-3d">Meta's comprehensive introduction to frontend development covering HTML, CSS, JavaScript fundamentals, and modern web practices.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Certificate 4: Programming with JavaScript -->
+                            <div class="cert-card-3d" data-category="meta webdev" onclick="window.open('img/certificates/metajs.png', '_blank')">
+                                <div class="cert-badge">Meta</div>
+                                <img src="img/certificates/metajs_optimized.jpg" alt="Programming with JavaScript" class="cert-image-3d">
+                                <h5 class="cert-title-3d">Programming with Javascript</h5>
+                                <p class="cert-description-3d">Comprehensive JavaScript programming course covering core concepts, DOM manipulation, and dynamic web development.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Certificate 5: Version Control -->
+                            <div class="cert-card-3d" data-category="meta webdev" onclick="window.open('img/certificates/metaVc.png', '_blank')">
+                                <div class="cert-badge">Meta</div>
+                                <img src="img/certificates/metaVc_optimized.jpg" alt="Version Control" class="cert-image-3d">
+                                <h5 class="cert-title-3d">Version Control</h5>
+                                <p class="cert-description-3d">Complete version control course covering Git fundamentals, branching, merging, and collaborative development workflows.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Certificate 6: React Basics -->
+                            <div class="cert-card-3d" data-category="meta webdev" onclick="window.open('img/certificates/reactBasisMeta.png', '_blank')">
+                                <div class="cert-badge">Meta</div>
+                                <img src="img/certificates/reactBasisMeta.png" alt="React Basics" class="cert-image-3d">
+                                <h5 class="cert-title-3d">React Basics</h5>
+                                <p class="cert-description-3d">Foundational React course covering component development, state management, and interactive web application creation.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Page 2: Advanced & Programming -->
+                    <div class="cert-page" id="page-2">
+                        <div class="cert-3d-grid">
+                            
+                            <!-- Certificate 7: React Advanced -->
+                            <div class="cert-card-3d" data-category="meta webdev" onclick="window.open('img/certificates/reactAReact.png', '_blank')">
+                                <div class="cert-badge">Meta</div>
+                                <img src="img/certificates/reactAReact.png" alt="React Advanced" class="cert-image-3d">
+                                <h5 class="cert-title-3d">React Advanced</h5>
+                                <p class="cert-description-3d">Advanced React course covering state management, routing, Redux integration, and complex interactive applications.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Certificate 8: Meta Interview Preparation -->
+                            <div class="cert-card-3d" data-category="meta webdev" onclick="window.open('img/certificates/interview.pdf', '_blank')">
+                                <div class="cert-badge">Meta</div>
+                                <img src="img/certificates/interview_optimized.jpg" alt="Meta Interview Certificate" class="cert-image-3d">
+                                <h5 class="cert-title-3d">Meta Interview Preparation</h5>
+                                <p class="cert-description-3d">Comprehensive interview preparation certification covering technical interviews, coding challenges, and Meta's hiring process.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Certificate 9: Python Basics -->
+                            <div class="cert-card-3d" data-category="python" onclick="window.open('img/certificates/py.png', '_blank')">
+                                <div class="cert-badge">Sololearn</div>
+                                <img src="img/certificates/py_optimized.jpg" alt="Python Basics" class="cert-image-3d">
+                                <h5 class="cert-title-3d">Python Basics</h5>
+                                <p class="cert-description-3d">Foundational Python course providing hands-on experience in programming, data manipulation, and problem-solving.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Certificate 10: Python Advanced -->
+                            <div class="cert-card-3d" data-category="python" onclick="window.open('img/certificates/python.png', '_blank')">
+                                <div class="cert-badge">Sololearn</div>
+                                <img src="img/certificates/python_optimized.jpg" alt="Python Advanced" class="cert-image-3d">
+                                <h5 class="cert-title-3d">Python Advanced</h5>
+                                <p class="cert-description-3d">Advanced Python course covering object-oriented programming, data analysis, and web scraping techniques. Includes comprehensive training in complex application development, advanced algorithms, and industry best practices for professional Python development.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Page 3: AI & Professional -->
+                    <div class="cert-page" id="page-3">
+                        <div class="cert-3d-grid">
+                            
+                            <!-- Certificate 11: Responsive Web Design -->
+                            <div class="cert-card-3d" data-category="other webdev" onclick="window.open('img/certificates/responsiveWeb.jpg', '_blank')">
+                                <div class="cert-badge">freeCodeCamp</div>
+                                <img src="img/certificates/responsiveWeb.jpg" alt="Responsive Web Design" class="cert-image-3d">
+                                <h5 class="cert-title-3d">Responsive Web Design</h5>
+                                <p class="cert-description-3d">Project-driven responsive web design course emphasizing practical experience through real-world website creation.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Certificate 12: C++ Programming -->
+                            <div class="cert-card-3d" data-category="programming" onclick="window.open('img/certificates/C++.pdf', '_blank')">
+                                <div class="cert-badge">CodeChef</div>
+                                <img src="img/certificates/C++_standard.png" alt="C++ Certificate" class="cert-image-3d">
+                                <h5 class="cert-title-3d">C++ Programming</h5>
+                                <p class="cert-description-3d">Advanced C++ programming certification covering object-oriented programming, data structures, and algorithm implementation.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Certificate 13: HP AI -->
+                            <div class="cert-card-3d" data-category="other" onclick="window.open('img/certificates/hp_ai.pdf', '_blank')">
+                                <div class="cert-badge">HP Inc.</div>
+                                <img src="img/certificates/hp_ai_standard.png" alt="HP AI Certificate" class="cert-image-3d">
+                                <h5 class="cert-title-3d">Artificial Intelligence</h5>
+                                <p class="cert-description-3d">HP Artificial Intelligence certification focusing on machine learning, neural networks, and AI application development.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Certificate 14: CS50 Python -->
+                            <div class="cert-card-3d" data-category="harvard python" onclick="window.open('img/certificates/CS50Python.pdf', '_blank')">
+                                <div class="cert-badge">Harvard</div>
+                                <img src="img/certificates/CS50Python_standard.png" alt="CS50 Python Certificate" class="cert-image-3d">
+                                <h5 class="cert-title-3d">CS50's Introduction to Python</h5>
+                                <p class="cert-description-3d">Harvard's comprehensive Python programming course covering data structures, algorithms, and software engineering principles.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Page 4: Advanced & Professional -->
+                    <div class="cert-page" id="page-4">
+                        <div class="cert-3d-grid">
+                            
+                            <!-- Certificate 15: Frontend Developer Professional -->
+                            <div class="cert-card-3d" data-category="other webdev" onclick="window.open('img/certificates/frontend_developer.png', '_blank')">
+                                <div class="cert-badge">Frontend Masters</div>
+                                <img src="img/certificates/frontend_developer_standard.png" alt="Frontend Developer Certificate" class="cert-image-3d">
+                                <h5 class="cert-title-3d">Frontend Developer Professional</h5>
+                                <p class="cert-description-3d">Professional frontend development certification covering modern frameworks, responsive design, and user experience optimization.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Certificate 16: English for Career Development -->
+                            <div class="cert-card-3d" data-category="other" onclick="window.open('img/certificates/Eng_for_career.pdf', '_blank')">
+                                <div class="cert-badge">University of Pennsylvania</div>
+                                <img src="img/certificates/Eng_for_career_standard.png" alt="English for Career Certificate" class="cert-image-3d">
+                                <h5 class="cert-title-3d">English for Career Development</h5>
+                                <p class="cert-description-3d">Professional English communication certification focusing on business writing, presentation skills, and workplace communication.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Certificate 17: Machine Learning -->
+                            <div class="cert-card-3d" data-category="programming" onclick="window.open('img/certificates/skillup.png', '_blank')">
+                                <div class="cert-badge">Simplilearn</div>
+                                <img src="img/certificates/skillup.png" alt="Machine Learning Certificate" class="cert-image-3d">
+                                <h5 class="cert-title-3d">Machine Learning</h5>
+                                <p class="cert-description-3d">Practical machine learning course covering algorithms, deep learning, and real-world ML model building and deployment.</p>
+                                <div class="cert-footer-3d">
+                                    <div class="cert-status">
+                                        <i class="lni lni-graduation"></i>
+                                        Certified
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination Controls -->
+                    <div class="cert-pagination-controls">
+                        <button class="page-btn" id="prevBtn" onclick="changePage(-1)" title="Previous Certificate Page">
+                            <i class="lni lni-chevron-left"></i>
+                        </button>
+                        
+                        <button class="page-btn active" onclick="goToPage(1)">1</button>
+                        <button class="page-btn" onclick="goToPage(2)">2</button>
+                        <button class="page-btn" onclick="goToPage(3)">3</button>
+                        <button class="page-btn" onclick="goToPage(4)">4</button>
+                        
+                        <span class="page-info">Page <span id="currentPage">1</span> of 4</span>
+                        
+                        <button class="page-btn" id="nextBtn" onclick="changePage(1)" title="Next Certificate Page">
+                            <i class="lni lni-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<!-- END Certificates-->
+
+<!-- START CONTACT -->
+<section class="section slide5 contact-bg" id="contact">
+    <div class="container">
+        <div class="row pb-5">
+            <div class="col-12">
+                <h3 class="main-font text-uppercase"><span class="text-yellow d-block text-uppercase"> Contact Me </span> <span> Get In Touch </span></h3>
+                <p class="py-2 alt-font">Ready to bring your ideas to life? Let's collaborate and create something amazing together!</p>
+            </div>
+        </div>
+        <form class="contact-form" id="contact-form-data" method="post" action="https://script.google.com/macros/s/AKfycbylIXxyORzTy1Nqqp24S-Dppg8rMU1cC06F5r6auTzddcgvqv7j2BM_VrTNqAieawv-GQ/exec" name="contact-form">
+            <div class="form-fields-container">
+                <div class="row pt-3">
+                    <!-- Submission Popup -->
+                    <div class="col-12">
+                        <div class="col-sm-12 px-0" id="result"></div>
+                    </div>
+                    <!--Left Column-->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Full Name *"  id="first_name" name="userName" required >
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" type="email" placeholder="Email Address *"  id="email" name="userEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Company/Organization" id="company" name="userCompany">
+                        </div>
+                        
+                        <div class="form-group">
+                            <select class="form-control" id="project_type" name="projectType" required>
+                                <option value="" disabled selected style="color: rgba(255, 255, 255, 0.8);">Select Project Type *</option>
+                                <option value="Frontend Development" style="color: white;">Frontend Development</option>
+                                <option value="Backend Development" style="color: white;">Backend Development</option>
+                                <option value="Full Stack Development" style="color: white;">Full Stack Development</option>
+                                <option value="App Development" style="color: white;">App Development</option>
+                                <option value="Research" style="color: white;">Research</option>
+                                <option value="Consultation" style="color: white;">Consultation</option>
+                                <option value="Other" style="color: white;">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--Right Column-->
+                    <div class="col-12 col-md-6 contact-form">
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Tell me about your project ideas, goals, timeline, or any questions you have..." id="message" name="userMessage" required rows="8"></textarea>
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="col-12 px-md-0">
+                        <div class="contact-btn pt-4 text-center text-lg-left">
+                            <button type="submit" class="btn btn-medium btn-rounded btn-yellow text-capitalize contact_btn" id="submitBtn">
+                                <span class="btn-text">Submit</span>
+                                <div class="envelope-animation" style="display: none;">
+                                    <div class="envelope">
+                                        <div class="envelope-flap"></div>
+                                        <div class="envelope-body"></div>
+                                    </div>
+                                </div>
+                            </button>
+                            <div class="submission-message" style="display: none;">
+                                <p class="alt-font text-small mt-3 mb-0 text-success">✉️ Submitted! I will try to reach out soon.</p>
+                            </div>
+                            <p class="alt-font text-small mt-3 mb-0 initial-message">* Required fields. I'll get back to you within 24 hours!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Large Envelope Animation Container -->
+            <div class="envelope-container" id="envelopeContainer">
+                <div class="large-envelope">
+                    <div class="envelope-front"></div>
+                    <div class="envelope-flap-large"></div>
+                    <div class="envelope-message">
+                        <div class="message-header">
+                            <div class="message-icon">✉️</div>
+                            <h4 class="message-title">Your Message</h4>
+                        </div>
+                        <div class="message-lines">
+                            <div class="message-line"></div>
+                            <div class="message-line"></div>
+                            <div class="message-line"></div>
+                            <div class="message-line"></div>
+                            <div class="message-line"></div>
+                        </div>
+                    </div>
+                    <div class="envelope-stamp">SENT</div>
+                </div>
+            </div>
+            
+            <!-- Top Success Notification -->
+            <div class="top-success-notification" id="topSuccessNotification">
+                <div class="success-notification-content">
+                    <div class="success-badge">
+                        <div class="success-checkmark">✓</div>
+                    </div>
+                    <div class="success-details">
+                        <h3 class="success-heading">Message Sent</h3>
+                        <p class="success-amount">Successfully Delivered</p>
+                        <p class="success-info">Thank you! I'll get back to you soon.</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- END CONTACT -->
+
+
+<!-- Start Copyright -->
+<div class="slider-bottom">
+    <div class="slider-footer w-auto">
+        <ul class="social-icons-simple">
+            <li><a class="social-icon" href="https://www.facebook.com/matrikaregmi09"><i class="lni lni-facebook-filled"></i> </a> </li>
+            <li><a class="social-icon" href="https://github.com/Mrt009"><i class="lni lni-github-original"></i> </a> </li>
+            <li><a class="social-icon" href="https://mail.google.com/mail/u/0/#matrikaregmi09@gmail.com"><i class="lni lni-envelope"></i> </a> </li>
+            <li><a class="social-icon" href="https://www.linkedin.com/in/matrika-regmi/"><i class="lni lni-linkedin-original"></i> </a> </li>
+        </ul>
+    </div>
+    <span class="slider-copyright text-grey copy"> © 2023-2025 Matrika Regmi</span>
+</div>
+<!-- End Copyright -->
+
+
+
+<!-- JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js" defer></script>
+<script src="js/bundle.min.js" defer></script>
+
+<script>
+    if (window.matchMedia("(max-width: 1199px)").matches) {
+      var script = document.createElement('script');
+      script.src = 'js/slideshow.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+</script>
+
+<!-- portfolio items switching-->
+
+
+
+<!-- Plugin Js -->
+ 
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' defer></script> 
+<!-- Owl Carousel JS -->
+
+ <script src='https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples.min.js' defer></script>
+<script src="js/jquery.appear.js" defer></script>
+<script src="js/jquery.fancybox.min.js" defer></script>
+<script src="js/owl.carousel.min.js" defer></script>
+<!-- CUSTOM JS -->
+<script src="js/performance.js" defer></script>
+<script src="js/research-modal.js" defer></script>
+<script src="js/jquery.pagepiling.min.js" defer></script>
+<script src="js/contact_us.js" defer></script>
+<script>
+// Enhanced styling for project type select dropdown
+document.addEventListener('DOMContentLoaded', function() {
+    const select = document.getElementById('project_type');
+    
+    if (select) {
+        // Direct style application for select field with better visibility
+        select.style.cssText = 'color: rgba(255, 255, 255, 0.9) !important; background: rgba(255, 255, 255, 0.1) !important; border: 1px solid rgba(255, 255, 255, 0.3) !important; padding: 12px 15px !important; border-radius: 8px !important; font-weight: 500 !important; width: 100% !important; min-width: 300px !important; max-width: 100% !important; font-size: 16px !important; line-height: 1.4 !important; box-sizing: border-box !important; height: auto !important; -webkit-appearance: none !important; -moz-appearance: none !important; appearance: none !important; background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'rgba(255,255,255,0.6)\'><path d=\'M7 10l5 5 5-5z\'/></svg>") !important; background-repeat: no-repeat !important; background-position: right 12px center !important; background-size: 16px !important; padding-right: 40px !important;';
+        
+        // Visual feedback when option is selected
+        select.addEventListener('change', function() {
+            if (this.value !== '') {
+                this.style.borderColor = 'rgba(255, 193, 7, 0.7)';
+                this.style.background = 'rgba(255, 193, 7, 0.15)';
+                this.style.color = 'white';
+                this.style.fontWeight = '600';
+            } else {
+                this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                this.style.background = 'rgba(255, 255, 255, 0.1)';
+                this.style.color = 'rgba(255, 255, 255, 0.9)';
+                this.style.fontWeight = '500';
+            }
+        });
+        
+        // Focus styling
+        select.addEventListener('focus', function() {
+            this.style.borderColor = 'rgba(255, 193, 7, 0.8)';
+            this.style.boxShadow = '0 0 0 2px rgba(255, 193, 7, 0.3)';
+        });
+        
+        select.addEventListener('blur', function() {
+            if (this.value !== '') {
+                this.style.borderColor = 'rgba(255, 193, 7, 0.7)';
+            } else {
+                this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+            }
+            this.style.boxShadow = 'none';
+        });
+        
+        console.log('Project type select dropdown styling applied with improved visibility');
+    }
+});
+</script>
+
+<script>
+// Submit Button Envelope Animation
+document.addEventListener('DOMContentLoaded', function() {
+    const submitBtn = document.getElementById('submitBtn');
+    const contactForm = document.getElementById('contact-form-data');
+    const formFieldsContainer = document.querySelector('.form-fields-container');
+    const submissionMessage = document.querySelector('.submission-message');
+    const initialMessage = document.querySelector('.initial-message');
+    const envelopeContainer = document.getElementById('envelopeContainer');
+    const successContainer = document.getElementById('topSuccessNotification');
+    
+    if (submitBtn && contactForm && formFieldsContainer) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent actual form submission for demo
+            
+            // Start whole form fields folding animation
+            submitBtn.disabled = true;
+            contactForm.classList.add('folding');
+            
+            // After initial folding starts (1.5s)
+            setTimeout(() => {
+                // Complete the fold
+                contactForm.classList.remove('folding');
+                contactForm.classList.add('folded');
+                
+                // Show the large envelope with message
+                if (envelopeContainer) {
+                    envelopeContainer.classList.add('show');
+                }
+                
+            }, 1500); // Wait for folding animation
+            
+            // After envelope fold animation completes (4s)
+            setTimeout(() => {
+                // Show creative success message
+                if (successContainer) {
+                    successContainer.classList.add('show');
+                }
+                
+                // Hide old submission message area
+                if (initialMessage) {
+                    initialMessage.classList.add('hide');
+                }
+                
+                // Reset everything after delay (8s total)
+                setTimeout(() => {
+                    // Hide success message
+                    if (successContainer) {
+                        successContainer.classList.remove('show');
+                    }
+                    
+                    // Hide envelope
+                    if (envelopeContainer) {
+                        envelopeContainer.classList.remove('show');
+                    }
+                    
+                    // Ensure all animations are reset
+                    if (submissionMessage) {
+                        submissionMessage.style.display = 'none';
+                    }
+                    
+                    // Unfold form with delay
+                    setTimeout(() => {
+                        contactForm.classList.remove('folded');
+                        contactForm.classList.add('folding');
+                        
+                        // Complete unfold
+                        setTimeout(() => {
+                            contactForm.classList.remove('folding');
+                            submitBtn.disabled = false;
+                            
+                            // Additional cleanup to ensure form is completely reset
+                            contactForm.style.transform = '';
+                            contactForm.style.height = '';
+                            
+                        }, 1200);
+                    }, 800);
+                    
+                    // Reset initial message
+                    if (initialMessage) {
+                        setTimeout(() => {
+                            initialMessage.classList.remove('hide');
+                            initialMessage.style.display = '';
+                        }, 1500);
+                    }
+                    
+                    // Reset form fields
+                    setTimeout(() => {
+                        contactForm.reset();
+                        
+                        // Reset project type select styling
+                        const projectSelect = document.getElementById('project_type');
+                        if (projectSelect) {
+                            projectSelect.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                            projectSelect.style.background = 'rgba(255, 255, 255, 0.1)';
+                            projectSelect.style.color = 'rgba(255, 255, 255, 0.9)';
+                            projectSelect.style.fontWeight = '500';
+                        }
+                    }, 2000);
+                    
+                }, 4000); // Show success message for 4 seconds
+                
+            }, 4000); // Wait for envelope animation to complete
+        });
+        
+        console.log('Whole form envelope animation initialized with creative success message');
+    }
+    
+    // Add a manual reset function for the contact form
+    window.resetContactForm = function() {
+        console.log('Manually resetting contact form...');
+        
+        const contactForm = document.getElementById('contact-form-data');
+        const submitBtn = document.getElementById('submitBtn');
+        const envelopeContainer = document.getElementById('envelopeContainer');
+        const successContainer = document.getElementById('topSuccessNotification');
+        const initialMessage = document.querySelector('.initial-message');
+        const submissionMessage = document.querySelector('.submission-message');
+        
+        // Remove all animation classes
+        if (contactForm) {
+            contactForm.classList.remove('folding', 'folded');
+            contactForm.style.transform = '';
+            contactForm.style.height = '';
+            contactForm.reset();
+        }
+        
+        // Hide all notification elements
+        if (envelopeContainer) envelopeContainer.classList.remove('show');
+        if (successContainer) successContainer.classList.remove('show');
+        if (submissionMessage) submissionMessage.style.display = 'none';
+        
+        // Show initial message
+        if (initialMessage) {
+            initialMessage.classList.remove('hide');
+            initialMessage.style.display = '';
+        }
+        
+        // Re-enable submit button
+        if (submitBtn) {
+            submitBtn.disabled = false;
+        }
+        
+        // Reset project type select styling
+        const projectSelect = document.getElementById('project_type');
+        if (projectSelect) {
+            projectSelect.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+            projectSelect.style.background = 'rgba(255, 255, 255, 0.1)';
+            projectSelect.style.color = 'rgba(255, 255, 255, 0.9)';
+            projectSelect.style.fontWeight = '500';
+        }
+        
+        console.log('Contact form reset completed');
+    };
+});
+</script>
+
+<script src="js/script.js" defer></script>
+<script src="js/small.js" defer></script>
+<script src="js/backend.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script> 
+
+<script>
+// Certificate Pagination and Filtering - Robust Version
+let currentPageNum = 1;
+const totalPages = 4;
+
+// Simple, reliable pagination functions
+function goToPage(pageNum) {
+    console.log('goToPage called with:', pageNum);
+    
+    // Set flag to prevent scroll detection during pagination
+    isPaginationActive = true;
+    lastPaginationTime = Date.now(); // Record pagination time
+    
+    // Convert to number and validate
+    pageNum = parseInt(pageNum);
+    if (isNaN(pageNum) || pageNum < 1 || pageNum > 4) {
+        console.error('Invalid page number:', pageNum);
+        return false;
+    }
+    
+    console.log('Going to page:', pageNum);
+    
+    // Hide all pages
+    const allPages = document.querySelectorAll('.cert-page');
+    allPages.forEach(page => {
+        page.style.display = 'none';
+        page.classList.remove('active');
+    });
+    
+    // Show target page
+    const targetPage = document.getElementById('page-' + pageNum);
+    if (targetPage) {
+        targetPage.style.display = 'block';
+        targetPage.classList.add('active');
+        console.log('Showing page:', pageNum);
+    } else {
+        console.error('Page not found: page-' + pageNum);
+        return false;
+    }
+    
+    // Update page buttons
+    const pageButtons = document.querySelectorAll('.page-btn:not(#prevBtn):not(#nextBtn)');
+    pageButtons.forEach((btn, index) => {
+        btn.classList.remove('active');
+        if (index + 1 === pageNum) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Update current page number
+    currentPageNum = pageNum;
+    window.currentPageNum = pageNum;
+    console.log('Updated currentPageNum to:', currentPageNum);
+    
+    const currentPageSpan = document.getElementById('currentPage');
+    if (currentPageSpan) {
+        currentPageSpan.textContent = pageNum;
+    }
+    
+    // Navigation buttons are now for section navigation, not certificate pagination
+    // No need to disable them based on certificate page number
+    
+    console.log('Page change completed. Current page:', pageNum);
+    
+        // Reset scroll position to top of certificate section WITHOUT triggering navigation
+        const scrollWrap = document.querySelector('#certificate .scroll-wrap');
+        if (scrollWrap) {
+            // Temporarily disable all scroll event detection during pagination
+            isPaginationActive = true;
+            lastPaginationTime = Date.now();
+            
+            // Store the current scroll position before reset
+            const beforeResetPosition = scrollWrap.scrollTop;
+            
+            // Immediate scroll to final position (don't use gradual reset)
+            scrollWrap.scrollTop = 0;
+            console.log('Reset certificate scroll position from', beforeResetPosition, 'to 0');
+            
+            // Mark this as a programmatic scroll (not user scroll)
+            lastScrollTop = beforeResetPosition; // Keep the previous position in memory
+            lastScrollTime = Date.now() - 1000; // Set old timestamp to avoid velocity calculation
+        }
+        
+        // Reset pagination flag after longer delay to ensure scroll events don't interfere
+        setTimeout(() => {
+            isPaginationActive = false;
+            console.log('Pagination flag reset - scroll detection re-enabled');
+        }, 1000); // Longer delay to be completely safe
+    
+    return true;
+}
+
+// Function to navigate between main sections
+function navigateToSection(sectionName) {
+    console.log('Navigating to section:', sectionName);
+    
+    // Remove the PagePiling prevention we added earlier
+    if (typeof $.fn.pagepiling !== 'undefined') {
+        try {
+            // Use PagePiling to navigate to the specified section
+            $.fn.pagepiling.moveTo(sectionName);
+            console.log('Navigated to section:', sectionName);
+        } catch (e) {
+            console.log('PagePiling navigation failed, using fallback:', e);
+            // Fallback: direct scroll to section
+            const targetSection = document.getElementById(sectionName);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    }
+}
+
+function changePage(direction) {
+    console.log('changePage called with direction:', direction);
+    console.log('Current page before change:', currentPageNum);
+    const newPage = currentPageNum + direction;
+    console.log('New page calculated:', newPage);
+    
+    if (newPage >= 1 && newPage <= 4) {
+        goToPage(newPage);
+        
+        // Update arrow button states
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        if (prevBtn) {
+            if (newPage === 1) {
+                prevBtn.classList.add('disabled');
+                prevBtn.style.opacity = '0.5';
+            } else {
+                prevBtn.classList.remove('disabled');
+                prevBtn.style.opacity = '1';
+            }
+        }
+        
+        if (nextBtn) {
+            if (newPage === 4) {
+                nextBtn.classList.add('disabled');
+                nextBtn.style.opacity = '0.5';
+            } else {
+                nextBtn.classList.remove('disabled');
+                nextBtn.style.opacity = '1';
+            }
+        }
+        
+    } else {
+        console.log('Cannot change page. Current:', currentPageNum, 'Direction:', direction, 'New:', newPage);
+    }
+}
+
+// Make functions globally available immediately
+window.goToPage = goToPage;
+window.changePage = changePage;
+window.navigateToSection = navigateToSection;
+window.currentPageNum = 1;
+window.totalPages = 4;
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing certificate system...');
+    
+    // Initialize variables
+    window.currentPageNum = 1;
+    window.totalPages = 4;
+    
+    // Set initial state for arrow buttons
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    if (prevBtn) {
+        prevBtn.classList.add('disabled');
+        prevBtn.style.opacity = '0.5';
+    }
+    
+    // Only add backup event listeners for numbered buttons, not arrow buttons
+    document.querySelectorAll('.page-btn:not(#prevBtn):not(#nextBtn)').forEach((btn) => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // It's a numbered button
+            const pageNum = parseInt(this.textContent);
+            if (!isNaN(pageNum)) {
+                goToPage(pageNum);
+            }
+        });
+    });
+    
+    // Ensure first page is active
+    const allPages = document.querySelectorAll('.cert-page');
+    console.log('Found pages:', allPages.length);
+    allPages.forEach((page, index) => {
+        if (index === 0) {
+            page.classList.add('active');
+            page.style.display = 'block';
+        } else {
+            page.classList.remove('active');
+            page.style.display = 'none';
+        }
+    });
+    
+    // Initialize certificate card interactions
+    const certCards = document.querySelectorAll('.cert-card-3d');
+    console.log('Found certificate cards:', certCards.length);
+    
+    certCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+            
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(50px)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'rotateX(0) rotateY(0) translateZ(0)';
+        });
+    });
+    
+    // Initialize category filtering
+    initCategoryFiltering();
+    
+    // Test function accessibility
+    window.testPagination = function() {
+        console.log('Testing pagination...');
+        console.log('currentPageNum:', window.currentPageNum);
+        console.log('totalPages:', window.totalPages);
+        console.log('goToPage function:', typeof window.goToPage);
+        console.log('changePage function:', typeof window.changePage);
+    };
+    
+    // Make functions globally accessible
+    window.goToPage = goToPage;
+    window.changePage = changePage;
+    
+    console.log('Certificate system initialized successfully!');
+    
+    // Auto-test after 1 second
+    setTimeout(() => {
+        window.testPagination();
+    }, 1000);
+});
+
+// Category Filtering - Fixed version
+function initCategoryFiltering() {
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const allCards = document.querySelectorAll('.cert-card-3d');
+    
+    console.log('Initializing category filtering...');
+    console.log('Found buttons:', categoryBtns.length);
+    console.log('Found cards:', allCards.length);
+    
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            console.log('Filtering by category:', category);
+            
+            // Update active button
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Reset all pages to show
+            const allPages = document.querySelectorAll('.cert-page');
+            allPages.forEach(page => {
+                page.style.display = 'block';
+                page.classList.remove('active');
+            });
+            
+            if (category === 'all') {
+                // Restore original layout
+                const firstPageGrid = document.querySelector('#page-1 .cert-3d-grid');
+                if (firstPageGrid && firstPageGrid.originalCards) {
+                    // Restore original cards to first page
+                    firstPageGrid.innerHTML = '';
+                    firstPageGrid.originalCards.forEach(card => {
+                        firstPageGrid.appendChild(card);
+                    });
+                }
+                
+                // Show all certificates
+                allCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+                
+                // Restore normal pagination - only show first page
+                allPages.forEach((page, index) => {
+                    if (index === 0) {
+                        page.classList.add('active');
+                        page.style.display = 'block';
+                    } else {
+                        page.style.display = 'none';
+                    }
+                });
+                
+                // Show pagination controls
+                const paginationControls = document.querySelector('.cert-pagination-controls');
+                if (paginationControls) {
+                    paginationControls.style.display = 'flex';
+                }
+                window.currentPageNum = 1;
+                
+            } else {
+                // Filter certificates - Create unified grid
+                let visibleCount = 0;
+                const firstPageGrid = document.querySelector('#page-1 .cert-3d-grid');
+                const filteredCards = [];
+                
+                // Collect all matching certificates
+                allCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (cardCategory && cardCategory.split(' ').includes(category)) {
+                        filteredCards.push(card);
+                        visibleCount++;
+                    }
+                });
+                
+                console.log('Visible cards for category', category + ':', visibleCount);
+                
+                // Hide all pages first
+                allPages.forEach(page => {
+                    page.style.display = 'none';
+                    page.classList.remove('active');
+                });
+                
+                // Show only the first page
+                const firstPage = document.getElementById('page-1');
+                if (firstPage) {
+                    firstPage.style.display = 'block';
+                    firstPage.classList.add('active');
+                }
+                
+                // Clear the first page grid and add all filtered certificates
+                if (firstPageGrid) {
+                    // Store original cards for restoration later
+                    if (!firstPageGrid.originalCards) {
+                        firstPageGrid.originalCards = Array.from(firstPageGrid.children);
+                    }
+                    
+                    // Clear current content
+                    firstPageGrid.innerHTML = '';
+                    
+                    // Add all filtered certificates to create proper 3-per-row grid
+                    filteredCards.forEach(card => {
+                        firstPageGrid.appendChild(card.cloneNode(true));
+                    });
+                }
+                
+                // Hide pagination controls during filtering since all results are on one page
+                const paginationControls = document.querySelector('.cert-pagination-controls');
+                if (paginationControls) {
+                    paginationControls.style.display = 'none';
+                }
+            }
+        });
+    });
+}
+
+// Smart scroll detection with velocity and intent recognition
+let isPaginationActive = false;
+let scrollTimeout;
+let countdownInterval;
+let lastScrollTime = 0;
+let lastScrollTop = 0;
+let scrollVelocity = 0;
+let rapidScrollCount = 0;
+let rapidScrollTimer;
+let topScrollAttempts = 0;
+let topScrollTimer;
+let lastPaginationTime = 0; // Track when pagination was last used
+
+document.addEventListener('DOMContentLoaded', function() {
+    const certificateScrollWrap = document.querySelector('#certificate .scroll-wrap');
+    const scrollIndicator = document.getElementById('scrollIndicator');
+    const countdownElement = document.getElementById('countdown');
+    const paginationArea = document.querySelector('.cert-pagination-controls');
+    
+    if (certificateScrollWrap) {
+        certificateScrollWrap.addEventListener('scroll', function() {
+            // Don't trigger navigation if pagination was just used
+            if (isPaginationActive) {
+                return;
+            }
+            
+            const currentTime = Date.now();
+            const currentScrollTop = this.scrollTop;
+            const scrollDelta = Math.abs(currentScrollTop - lastScrollTop);
+            const timeDelta = currentTime - lastScrollTime;
+            
+            // Calculate scroll velocity (pixels per millisecond)
+            if (timeDelta > 0) {
+                scrollVelocity = scrollDelta / timeDelta;
+            }
+            
+            // Track rapid scrolling
+            if (scrollVelocity > 1 && timeDelta < 100) { // Fast scroll detected
+                rapidScrollCount++;
+                clearTimeout(rapidScrollTimer);
+                rapidScrollTimer = setTimeout(() => {
+                    rapidScrollCount = 0; // Reset rapid scroll count after 1 second
+                }, 1000);
+            }
+            
+            // Clear any existing timeout and countdown
+            clearTimeout(scrollTimeout);
+            clearInterval(countdownInterval);
+            if (scrollIndicator) {
+                scrollIndicator.classList.remove('active');
+            }
+            
+            // Smart upward scroll detection - enhanced to prevent pagination interference
+            const timeSincePagination = currentTime - lastPaginationTime;
+            const isAtTop = currentScrollTop <= 8;
+            const isScrollingUp = currentScrollTop < lastScrollTop && lastScrollTop > 0;
+            const timeSinceLastUpdate = currentTime - lastScrollTime;
+            const hasRealVelocity = scrollVelocity > 0.3;
+            const isRecentScroll = timeSinceLastUpdate < 2000; // Must be recent user activity
+            
+            // Add debugging
+            if (isAtTop) {
+                console.log('DEBUG: At top - scrollTop:', currentScrollTop, 'lastScrollTop:', lastScrollTop, 'isScrollingUp:', isScrollingUp, 'timeSincePagination:', timeSincePagination, 'isPaginationActive:', isPaginationActive, 'velocity:', scrollVelocity, 'isRecentScroll:', isRecentScroll);
+            }
+            
+            // Enhanced conditions to prevent pagination interference - DISABLED to prevent glitches
+            if (timeSincePagination < 1500) {
+                console.log('Upward navigation blocked - recent pagination activity (1.5s protection)');
+                // Don't return, continue to other scroll detection
+            } else if (false) { // DISABLED: Multiple scroll handlers causing glitches
+                // This smart scroll detection is disabled to prevent conflicts with wheel handler
+                console.log('Smart scroll detection disabled to prevent glitches');
+            }
+            
+            // Get pagination area position for extra tolerance
+            let paginationOffset = 0;
+            let nearPagination = false;
+            if (paginationArea) {
+                const paginationRect = paginationArea.getBoundingClientRect();
+                const containerRect = this.getBoundingClientRect();
+                paginationOffset = Math.max(0, (containerRect.bottom - paginationRect.top - 100)); // Extra 100px above pagination
+                
+                // Check if user is in the pagination interaction zone (150px above pagination)
+                nearPagination = (containerRect.bottom - paginationRect.top) < 150;
+            }
+            
+            // Check if at bottom with smart tolerance based on pagination area
+            const extraTolerance = nearPagination ? 250 : 50; // Even more tolerance when near pagination buttons
+            const isAtBottom = currentScrollTop + this.clientHeight >= this.scrollHeight - extraTolerance;
+            
+            // Don't auto-navigate if user is actively near pagination buttons
+            if (nearPagination && !isAtBottom) {
+                console.log('User near pagination area - auto-navigation disabled');
+                return; // Don't auto-navigate when near pagination
+            }
+            
+            if (isAtBottom) {
+                // Fixed countdown time - always 4 seconds for all users
+                let countdownTime = 4000; // Always 4 seconds as requested
+                console.log('At bottom - using fixed 4 second countdown');
+                
+                // Show countdown indicator
+                if (scrollIndicator && countdownElement) {
+                    scrollIndicator.classList.add('active');
+                    let timeLeft = Math.ceil(countdownTime / 1000);
+                    countdownElement.textContent = timeLeft;
+                    
+                    // Update countdown every second
+                    countdownInterval = setInterval(() => {
+                        timeLeft--;
+                        countdownElement.textContent = timeLeft;
+                        if (timeLeft <= 0) {
+                            clearInterval(countdownInterval);
+                        }
+                    }, 1000);
+                }
+                
+                // Navigate after countdown
+                scrollTimeout = setTimeout(() => {
+                    // Hide indicator
+                    if (scrollIndicator) {
+                        scrollIndicator.classList.remove('active');
+                    }
+                    
+                    // Double-check we're still at bottom after the delay
+                    const stillAtBottom = this.scrollTop + this.clientHeight >= this.scrollHeight - extraTolerance;
+                    if (stillAtBottom) {
+                        // Add small delay to prevent glitchy transitions
+                        setTimeout(() => {
+                            if (typeof $.fn.pagepiling !== 'undefined' && typeof $.fn.pagepiling.moveTo === 'function') {
+                                $.fn.pagepiling.moveTo('contact');
+                                console.log('Navigated to contact section after reading time');
+                            }
+                        }, 100);
+                    }
+                }, countdownTime);
+            }
+            
+            // Update tracking variables
+            lastScrollTime = currentTime;
+            lastScrollTop = currentScrollTop;
+        });
+        
+        // Disabled wheel event listener as it was interfering with pagination
+        // certificateScrollWrap.addEventListener('wheel', function(e) {
+        //     if (isPaginationActive) {
+        //         return;
+        //     }
+        //     
+        //     const currentScrollTop = this.scrollTop;
+        //     const isAtTop = currentScrollTop <= 15;
+        //     const isScrollingUp = e.deltaY < 0;
+        //     
+        //     if (isAtTop && isScrollingUp) {
+        //         e.preventDefault();
+        //         if (typeof $.fn.pagepiling !== 'undefined' && typeof $.fn.pagepiling.moveTo === 'function') {
+        //             $.fn.pagepiling.moveTo('portfolio');
+        //         }
+        //     }
+        // });
+        
+        // Cancel auto-navigation if user scrolls up or clicks during countdown
+        certificateScrollWrap.addEventListener('click', function() {
+            if (scrollIndicator && scrollIndicator.classList.contains('active')) {
+                clearTimeout(scrollTimeout);
+                clearInterval(countdownInterval);
+                scrollIndicator.classList.remove('active');
+                console.log('Auto-navigation cancelled by user interaction');
+            }
+        });
+        
+        // Also cancel if user scrolls up from bottom
+        certificateScrollWrap.addEventListener('scroll', function() {
+            if (scrollIndicator && scrollIndicator.classList.contains('active')) {
+                const isAtBottom = this.scrollTop + this.clientHeight >= this.scrollHeight - 10;
+                if (!isAtBottom) {
+                    clearTimeout(scrollTimeout);
+                    clearInterval(countdownInterval);
+                    scrollIndicator.classList.remove('active');
+                    console.log('Auto-navigation cancelled - user scrolled up');
+                }
+            }
+        });
+        
+        console.log('Smart certificate scroll-to-contact detection initialized');
+    }
+});
+
+// Add keyboard shortcut as alternative to scroll-back (Press 'P' to go to Portfolio)
+document.addEventListener('keydown', function(e) {
+    // Only work when in certificate section
+    const currentSection = document.querySelector('.section.active');
+    if (currentSection && currentSection.id === 'certificate') {
+        if (e.key.toLowerCase() === 'p' || e.key === 'ArrowUp') {
+            console.log('Keyboard shortcut triggered - navigating to portfolio');
+            if (typeof $.fn.pagepiling !== 'undefined' && typeof $.fn.pagepiling.moveTo === 'function') {
+                $.fn.pagepiling.moveTo('portfolio');
+                console.log('Navigated to portfolio via keyboard shortcut');
+            }
+        }
+    }
+});
+
+// Performance Optimization: Lazy load large images
+document.addEventListener('DOMContentLoaded', function() {
+    // Create intersection observer for lazy loading
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy-load');
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            }
+        });
+    }, {
+        rootMargin: '50px 0px',
+        threshold: 0.1
+    });
+
+    // Observe all lazy load images
+    document.querySelectorAll('.lazy-load').forEach(img => {
+        imageObserver.observe(img);
+    });
+
+    // Optimize large background images - load after page load
+    setTimeout(() => {
+        const heavyBgs = document.querySelectorAll('.portfolio-bg, .skills-bg, .testimonial-bg');
+        heavyBgs.forEach(element => {
+            if (element.style.backgroundImage) {
+                const bgUrl = element.style.backgroundImage;
+                const img = new Image();
+                img.onload = () => {
+                    element.style.backgroundImage = bgUrl;
+                };
+                img.src = bgUrl.slice(5, -2); // Remove url(" and ")
+            }
+        });
+    }, 2000);
+
+    console.log('Performance optimizations loaded');
+});
+
+// Defer heavy scripts
+setTimeout(() => {
+    // Load non-critical scripts after page load
+    if (!window.fancyboxLoaded) {
+        const script = document.createElement('script');
+        script.src = 'js/jquery.fancybox.min.js';
+        script.onload = () => window.fancyboxLoaded = true;
+        document.head.appendChild(script);
+    }
+}, 3000);
+
+// Certificate Section Scroll Handler - Disable PagePiling scroll behavior
+document.addEventListener('DOMContentLoaded', function() {
+    const certificateSection = document.getElementById('certificate');
+    const scrollWrap = certificateSection ? certificateSection.querySelector('.scroll-wrap') : null;
+    
+    if (certificateSection && scrollWrap) {
+        console.log('Setting up certificate section scroll handling...');
+        
+        // Disable PagePiling wheel events within certificate section
+        function handleWheelEvent(e) {
+            // Get scroll position first
+            const scrollTop = scrollWrap.scrollTop;
+            const scrollHeight = scrollWrap.scrollHeight;
+            const clientHeight = scrollWrap.clientHeight;
+            
+            // Check if we're at the boundaries (with small tolerance)
+            const atTop = scrollTop <= 3; // Reduced tolerance to prevent glitches
+            const atBottom = scrollTop + clientHeight >= scrollHeight - 3;
+            
+            // Check if we should allow PagePiling navigation
+            const shouldNavigateUp = atTop && e.deltaY < 0; // At top and scrolling up
+            const shouldNavigateDown = atBottom && e.deltaY > 0; // At bottom and scrolling down
+            
+            if (shouldNavigateUp) {
+                // Allow PagePiling to handle upward navigation - DON'T stop propagation
+                console.log('Allowing PagePiling navigation UP to Portfolio');
+                // Add small delay to prevent glitches
+                setTimeout(() => {
+                    if (typeof $.fn.pagepiling !== 'undefined' && typeof $.fn.pagepiling.moveTo === 'function') {
+                        $.fn.pagepiling.moveTo('portfolio');
+                    }
+                }, 50);
+                return true;
+            } else if (shouldNavigateDown) {
+                // Allow PagePiling to handle downward navigation
+                console.log('Allowing PagePiling navigation DOWN to Contact');
+                setTimeout(() => {
+                    if (typeof $.fn.pagepiling !== 'undefined' && typeof $.fn.pagepiling.moveTo === 'function') {
+                        $.fn.pagepiling.moveTo('contact');
+                    }
+                }, 50);
+                return true;
+            } else {
+                // Handle internal scrolling - stop PagePiling from interfering
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                e.preventDefault();
+                
+                // Handle internal scrolling with practical speed
+                scrollWrap.scrollTop += e.deltaY * 1.5;
+                return false;
+            }
+        }
+        
+        // Add wheel event listener to certificate section
+        certificateSection.addEventListener('wheel', handleWheelEvent, { passive: false, capture: true });
+        
+        // Also handle touch events for mobile
+        let touchStartY = 0;
+        let touchEndY = 0;
+        
+        certificateSection.addEventListener('touchstart', function(e) {
+            touchStartY = e.touches[0].clientY;
+            e.stopPropagation();
+        }, { passive: false, capture: true });
+        
+        certificateSection.addEventListener('touchmove', function(e) {
+            touchEndY = e.touches[0].clientY;
+            const deltaY = touchStartY - touchEndY;
+            
+            // Get scroll position
+            const scrollTop = scrollWrap.scrollTop;
+            const scrollHeight = scrollWrap.scrollHeight;
+            const clientHeight = scrollWrap.clientHeight;
+            
+            // Check if we're at the boundaries
+            const atTop = scrollTop === 0;
+            const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
+            
+            // Only allow PagePiling navigation if at boundaries
+            if (!((atTop && deltaY < 0) || (atBottom && deltaY > 0))) {
+                e.stopPropagation();
+                e.preventDefault();
+                scrollWrap.scrollTop += deltaY * 1.0; // Faster touch scroll
+            }
+            
+            touchStartY = touchEndY;
+        }, { passive: false, capture: true });
+        
+        certificateSection.addEventListener('touchend', function(e) {
+            e.stopPropagation();
+        }, { passive: false, capture: true });
+        
+        console.log('Certificate section scroll handling set up successfully');
+    }
+});
+
+// Additional PagePiling configuration - SIMPLIFIED to prevent glitches
+document.addEventListener('DOMContentLoaded', function() {
+    // Simplified PagePiling configuration
+    if (typeof $.fn.pagepiling !== 'undefined') {
+        // Minimal configuration to prevent conflicts
+        setTimeout(() => {
+            if ($('#pagepiling').length) {
+                console.log('PagePiling configuration simplified to prevent scroll glitches');
+                // Removed complex event handling that was causing conflicts
+                
+                // Add callback to reset contact form when navigating away
+                $(document).on('pageChanged', function() {
+                    if (typeof window.resetContactForm === 'function') {
+                        window.resetContactForm();
+                    }
+                });
+                
+                // Also reset when any section becomes active (if not contact)
+                $('.section').on('activate', function() {
+                    if (this.id !== 'contact' && typeof window.resetContactForm === 'function') {
+                        setTimeout(() => window.resetContactForm(), 100);
+                    }
+                });
+            }
+        }, 1000);
+    }
+});
+
+</script>
+
+</body>
+</html>
